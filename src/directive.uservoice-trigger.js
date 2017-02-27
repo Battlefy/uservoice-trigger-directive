@@ -4,7 +4,7 @@ angular
 	.module('directive.uservoice-trigger', [
 		'service.uservoice'
 	])
-	.directive('uservoiceTrigger', function (UserVoice) {
+	.directive('uservoiceTrigger', ['UserVoice', function (UserVoice) {
 		return {
 			restrict: 'A',
 			scope: {
@@ -44,5 +44,5 @@ angular
 				scope.$watch('identify', setIdentify);
 			}
 		};
-	})
+	}])
 ;
